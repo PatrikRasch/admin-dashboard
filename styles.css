@@ -3,9 +3,28 @@
 }
 
 @font-face {
-    font-family: "Assistant-Regular.ttf";
+    font-family: "assistant-regular";
     src: url(fonts/Assistant-Regular.ttf);
-    src: url(fonts/Assistant-Bold.ttf)
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "assistant-bold";
+    src: url("/fonts/Assistant-Bold.ttf");
+    font-style: bold;
+}
+
+@font-face {
+    font-family: "frontpageneue";
+    src: url(fonts/FrontPageNeue.otf);
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "timeline";
+    src: url(fonts/Timeline.ttf);
+    font-style: normal;
 }
 
 body {
@@ -48,6 +67,11 @@ body {
     grid-template: repeat(6, 40px) / 1fr;
     font-size: var(--title-font-size);
     padding-left: 30px;
+}
+
+.nav-line {
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
 }
 
 .settings {
@@ -114,15 +138,27 @@ body {
 }
 
 .profile-photo-img-small {
-    max-width: 35px;
+    max-width: 40px;
     clip-path: circle();
 }
 
 .search-bar {
-    border: 1.5px solid black;
-    border-radius: 15px;
+    /* border: 1.5px solid black;
+    border-radius: 15px; */
     width: 90%;
-    height: 30px;
+    height: 40px;
+    font-size: 30px;
+    font-family: timeline;
+    /* letter-spacing: 4px; */
+}
+
+.search-icon:hover {
+    transform: scale(1.05);
+    transition: 0.1s;
+}
+
+.search-icon {
+    transition: 0.1s;
 }
 
 .subheader {
@@ -139,9 +175,42 @@ body {
     justify-self: end;
 }
 
+.clickable {
+    transition: 0.1s;
+}
+
+.nav-text {
+    width: min-content;
+    height: min-content;
+    border: none;
+    background: none;
+    color: inherit;
+    font: inherit;
+    outline: inherit;
+    padding: 0;
+    transition: 0.1s;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-text:hover {
+    transform: scale(1.05);
+    transition: 0.1s;
+}
+
+.nav-text:active {
+    color: rgb(224, 224, 224);
+    transition: 0.1s;
+    transform: skewY(2deg);
+    transform: skewX(5deg);
+}
+
 .welcome {
     display: grid;
-    grid-template-columns: 90px 300px;
+    grid-template-columns: 90px 500px;
     grid-template-rows: 20px 40px;
 }
 
@@ -153,7 +222,7 @@ body {
 }
 
 .profile-photo-img {
-    max-width: 65px;
+    max-width: 75px;
     clip-path: circle();
 }
 
@@ -175,6 +244,7 @@ body {
     color: white;
     border: none;
     margin-right: 10px;
+
 }
 
 .btn:hover {
@@ -224,6 +294,8 @@ body {
 .top-card {
     margin: 25px 20px 5px 30px;
     font-size: var(--title-font-size);
+    font-family: frontpageneue;
+    letter-spacing: 1px;
 }
 
 .bottom-card {
@@ -267,7 +339,7 @@ body {
 .announcements-content {
     display: grid;
     align-items: center;
-    grid-template-rows: 1fr 0.05fr 1fr 0.05fr 1.1fr 0.2fr;
+    grid-template-rows: 1fr 0.01fr 0.8fr 0.01fr 0.85fr 0.1fr;
     background-color: var(--content-color);
     border-radius: 15px;
     padding: 0px 25px 0px 25px;
